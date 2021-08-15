@@ -1,0 +1,185 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:local="clr-namespace:NBLSystemProject.Pages"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="NBLSystemProject.Pages.Index"
+        mc:Ignorable="d"
+        Title="NBL System Solutions - INNOVA PPF. COM. E SERV. EIRELLI-ME" Height="600 " Width="940" VerticalAlignment="Center" WindowStyle="None" HorizontalAlignment="Center" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/pages/utils/ButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid RenderTransformOrigin="0.494,0.51" Background="#FFEEEEEE">
+
+        <Grid Margin="172,0,0,474" HorizontalAlignment="Left" Width="768" Height="31" VerticalAlignment="Bottom">
+            <Canvas Margin="-4,12,712,-13" RenderTransformOrigin="0.5,0.5" Background="#FFC94F48" Cursor="Hand">
+                <Canvas.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="-22.225"/>
+                        <RotateTransform Angle="22.367"/>
+                        <TranslateTransform Y="-12.258"/>
+                    </TransformGroup>
+                </Canvas.RenderTransform>
+                <fa:ImageAwesome Icon="Home" Margin="10,3,743,2" Foreground="LightGray" Height="24" Width="20" Canvas.Left="19" RenderTransformOrigin="0.5,0.5" Canvas.Top="-1">
+                    <fa:ImageAwesome.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleY="17.236"/>
+                            <RotateTransform Angle="-17.596"/>
+                            <TranslateTransform Y="2.348" X="-0.116"/>
+                        </TransformGroup>
+                    </fa:ImageAwesome.RenderTransform>
+                </fa:ImageAwesome>
+            </Canvas>
+            <Canvas Margin="63,12,632,-13" RenderTransformOrigin="0.5,0.5" Background="White" Cursor="Hand">
+                <Canvas.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="-22.225"/>
+                        <RotateTransform Angle="22.367"/>
+                        <TranslateTransform Y="-12.258"/>
+                    </TransformGroup>
+                </Canvas.RenderTransform>
+                <TextBlock Canvas.Left="7" Canvas.Top="9" TextWrapping="Wrap" Width="60" Height="16" Foreground="#FFAAAAAA"><Run Text="Dashboard"/><LineBreak/><Run/></TextBlock>
+
+            </Canvas>
+
+        </Grid>
+
+
+        <Grid Width="172" RenderTransformOrigin="0.5,0.5" Background="#FF272B2E" HorizontalAlignment="Left">
+
+            <fa:ImageAwesome Icon="FortAwesome" Height="63" VerticalAlignment="Top" Foreground="LightGray" Margin="32,10,30,0" />
+
+            <Button x:Name="btnUsuario" Height="44.668" Foreground="#FFD1D1D1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF222629"  BorderThickness="2" Padding="1" Width="171.957" Canvas.Top="104.587" Canvas.Left="0.023" Cursor="Hand" Background="#FF272B2E" Margin="0,149,0,406">
+                <StackPanel Orientation="Horizontal" Width="150" >
+                    <fa:ImageAwesome Icon="User"  Width="28.167" Height="20" Margin="0,0,10,0" Foreground="LightGray" />
+                    <TextBlock VerticalAlignment="Center" Width="58.99" Text="Usuário" />
+                </StackPanel>
+
+            </Button>
+            <Button x:Name="btnEstoque" Height="44.668" Foreground="#FFD1D1D1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF222629"  BorderThickness="2" Padding="1" Width="171.957" Canvas.Top="104.587" Canvas.Left="0.023" Cursor="Hand" Background="#FF272B2E" Margin="0,193,0,362">
+                <StackPanel Orientation="Horizontal" Width="150">
+                    <fa:ImageAwesome Icon="Inbox"  Width="28.167" Height="20" Margin="0,0,10,0" Foreground="LightGray"/>
+                    <TextBlock VerticalAlignment="Center" Width="58.99" Text="Estoque" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnClientes" Height="44.668" Foreground="#FFD1D1D1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF222629"  BorderThickness="2" Padding="1" Width="171.957" Canvas.Top="104.587" Canvas.Left="0.023" Cursor="Hand" Background="#FF272B2E" Margin="0,237,0,318">
+                <StackPanel Orientation="Horizontal" Width="150">
+                    <fa:ImageAwesome Icon="UserCircle"  Width="28.167" Height="20" Margin="0,0,10,0" Foreground="LightGray"/>
+                    <TextBlock Text="Clientes" VerticalAlignment="Center" Width="58.99" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnFornecedor" Height="44.668" Foreground="#FFD1D1D1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF222629"  BorderThickness="2" Padding="1" Width="171.957" Canvas.Top="104.587" Canvas.Left="0.023" Cursor="Hand" Background="#FF272B2E" Margin="0,282,0,273">
+                <StackPanel Orientation="Horizontal" Width="150">
+                    <fa:ImageAwesome Icon="UserCircleOutline"  Width="28.167" Height="20" Margin="0,0,10,0" Foreground="LightGray"/>
+                    <TextBlock Text="Fornecedores" VerticalAlignment="Center" Width="58.99" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnCaixa" Height="44.668" Foreground="#FFD1D1D1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF222629" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2" Padding="1" Width="171.957" Cursor="Hand" Background="#FF272B2E" Margin="0,327,0,228">
+                <StackPanel Orientation="Horizontal" Width="150">
+                    <fa:ImageAwesome Icon="CartPlus"  Width="28.167" Height="20" Margin="0,0,10,0" Foreground="LightGray"/>
+                    <TextBlock Text="Caixa" VerticalAlignment="Center" Width="58.99" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnContasPagar" Height="44.668" Foreground="#FFD1D1D1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF222629" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2" Padding="1" Width="171.957" Cursor="Hand" Background="#FF272B2E" Margin="0,372,0,183">
+                <StackPanel Orientation="Horizontal" Width="150">
+                    <fa:ImageAwesome Icon="Money"  Width="28.167" Height="20" Margin="0,0,10,0" Foreground="LightGray"/>
+                    <TextBlock Text="Contas à Pagar" VerticalAlignment="Center" Width="90" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnContasReceber" Height="44.668" Foreground="#FFD1D1D1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF222629" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2" Padding="1" Width="171.957" Cursor="Hand" Background="#FF272B2E" Margin="0,417,0,138">
+                <StackPanel Orientation="Horizontal" Width="150">
+                    <fa:ImageAwesome Icon="Money"  Width="28" Height="20" Margin="0,0,10,0" Foreground="LightGray"/>
+                    <TextBlock Text="Contas à Receber" VerticalAlignment="Center" Width="100" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnPregao" Height="44.668" Foreground="#FFD1D1D1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF222629" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2" Padding="1" Width="171.957" Cursor="Hand" Background="#FF272B2E" Margin="0,462,0,93">
+                <StackPanel Orientation="Horizontal" Width="150">
+                    <fa:ImageAwesome Icon="BarChartOutline"  Width="28.167" Height="20" Margin="0,0,10,0" Foreground="LightGray"/>
+                    <TextBlock Text="Pregão" VerticalAlignment="Center" Width="58.99" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnConfig" Height="44.668" Foreground="#FFD1D1D1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF222629" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2" Padding="1" Width="171.957" Cursor="Hand" Background="#FF272B2E" Margin="0,507,0,48">
+                <StackPanel Orientation="Horizontal" Width="150">
+                    <fa:ImageAwesome Icon="Gears"  Width="28.167" Height="20" Margin="0,0,10,0" Foreground="LightGray"/>
+                    <TextBlock Text="Configurações" VerticalAlignment="Center" Width="85" />
+                </StackPanel>
+            </Button>
+            <Grid x:Name="fundoFoto" Canvas.Top="50.5" Canvas.Left="0.023" RenderTransformOrigin="0.5,0.5" Background="#FFE5625A" Margin="0,0,0,456" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="172" Height="54" >
+                <Ellipse x:Name="photo" Height="46.5" Width="47.023" Canvas.Left="10" Canvas.Top="54.5" RenderTransformOrigin="0.473,0.482" Margin="10,4,115,4">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="/pages/img/user.jpg"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock x:Name="lblNomeUsuario" Text="user.name" Foreground="#FFD1D1D1" Canvas.Left="73" TextWrapping="Wrap" Canvas.Top="70.5" Height="21" Width="64" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" Margin="62,18,0,15"/>
+            </Grid>
+        </Grid>
+        <!-- GRID MENU LATERAL-->
+
+        <Grid Margin="172,0,0,510" Background="White">
+            <Grid.Effect>
+                <DropShadowEffect Color="Gainsboro" BlurRadius="30" RenderingBias="Quality" ShadowDepth="5"/>
+            </Grid.Effect>
+            <Grid Width="30" Height="50" Background="#FFE5625A" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="20,0">
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#FFD6D6D6" RenderingBias="Quality" ShadowDepth="1" Opacity="0.995"/>
+                </Grid.Effect>
+                <fa:ImageAwesome x:Name="btnCloseWindow" Icon="Close" Height="20" Margin="4,25,4,5" Foreground="LightGray" Cursor="Hand" MouseLeftButtonDown="btnCloseWindow_MouseLeftButtonDown"/>
+            </Grid>
+
+
+            <TextBlock Text="NBL System Project | 1.0.0.0" TextWrapping="Wrap" Margin="10,0,0,0" Foreground="#FFA8A8A8" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines" FontWeight="Normal" Width="697"/>
+
+        </Grid>
+
+        <Grid Margin="172,131,0,0" Grid.Column="1" Grid.Row="1" >
+            <ScrollViewer Grid.ColumnSpan="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200*"/>
+                        <RowDefinition Height="200*"/>
+                        <RowDefinition Height="200*"/>
+                    </Grid.RowDefinitions>
+                    <Rectangle Margin="31,20,31,10" Fill="White" RadiusX="10" RadiusY="10" Width="188"/>
+                    <Grid Margin="25">
+                        <Grid Width="30" Height="50" Background="#FFE5625A" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,-5,0,0">
+                            <Grid.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="#FFD6D6D6" RenderingBias="Quality" ShadowDepth="1" Opacity="0.995"/>
+                            </Grid.Effect>
+                            <fa:ImageAwesome Icon="Money" Height="20" Margin="4,27,4,3" Foreground="LightGray"/>
+                        </Grid>
+                        <TextBlock Text="Ultimas Contas" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="15 4" VerticalAlignment="Top" Foreground="#FFB6B6B6" FontSize="18"/>
+                    </Grid>
+
+                    <Rectangle Margin="31,20,30,10" Fill="White" RadiusX="10" RadiusY="10" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Rectangle Margin="31,10,30,31" Fill="White" RadiusX="10" RadiusY="10" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="1"/>
+                    <Rectangle Margin="31,10,31,10" Fill="White" RadiusX="10" RadiusY="10" Width="188" Grid.Row="1"/>
+                    <Rectangle Margin="31,10,31,31" Fill="White" RadiusX="10" RadiusY="10" Width="188" Grid.Row="2"/>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+
+    </Grid>
+
+
+
+</Window>
+
+    
+    
