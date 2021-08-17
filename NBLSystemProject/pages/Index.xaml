@@ -4,25 +4,40 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         xmlns:local="clr-namespace:NBLSystemProject.Pages"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="NBLSystemProject.Pages.Index"
         mc:Ignorable="d"
-        Title="NBL System Solutions - INNOVA PPF. COM. E SERV. EIRELLI-ME" Height="600 " Width="940" VerticalAlignment="Center" WindowStyle="None" HorizontalAlignment="Center" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
-
+        Title="NBL System Solutions" Height="600 " Width="940" VerticalAlignment="Center" WindowStyle="None" HorizontalAlignment="Center" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
 
     <Window.Resources>
         <ResourceDictionary>
+        <CollectionViewSource x:Key="categoryViewSource"/>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/pages/utils/ButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
+
     </Window.Resources>
 
     <Grid RenderTransformOrigin="0.494,0.51" Background="#FFEEEEEE">
 
-        <Grid Margin="172,0,0,474" HorizontalAlignment="Left" Width="768" Height="31" VerticalAlignment="Bottom">
-            <Canvas Margin="-4,12,712,-13" RenderTransformOrigin="0.5,0.5" Background="#FFC94F48" Cursor="Hand">
+        <Grid Margin="172,0,0,476" HorizontalAlignment="Left" Width="768" Height="36" VerticalAlignment="Bottom">
+            <Canvas Margin="66,12,610,-13" RenderTransformOrigin="0.5,0.5" Background="White" Cursor="Hand">
                 <Canvas.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="-22.225"/>
+                        <RotateTransform Angle="22.367"/>
+                        <TranslateTransform Y="-12.258"/>
+                    </TransformGroup>
+                </Canvas.RenderTransform>
+                <TextBlock Canvas.Left="9" Canvas.Top="9" TextWrapping="Wrap" Width="84" Height="16" FontFamily="Champagne &amp; Limousines" Foreground="#FFC94F48" FontSize="16" FontWeight="Bold"><Run Text="Dashboard"/><LineBreak/><Run/></TextBlock>
+
+            </Canvas>
+            <Canvas Margin="-8,12,712,-13" Clip="F1 M 0,0L 76,0L 76,76L 0,76L 0,0"  RenderTransformOrigin="0.5,0.5" Background="#FFC94F48" Cursor="Hand" x:Name="Home">
+
+                <Canvas.RenderTransform >
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform AngleY="-22.225"/>
@@ -41,18 +56,6 @@
                     </fa:ImageAwesome.RenderTransform>
                 </fa:ImageAwesome>
             </Canvas>
-            <Canvas Margin="63,12,632,-13" RenderTransformOrigin="0.5,0.5" Background="White" Cursor="Hand">
-                <Canvas.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleY="-22.225"/>
-                        <RotateTransform Angle="22.367"/>
-                        <TranslateTransform Y="-12.258"/>
-                    </TransformGroup>
-                </Canvas.RenderTransform>
-                <TextBlock Canvas.Left="7" Canvas.Top="9" TextWrapping="Wrap" Width="60" Height="16" Foreground="#FFAAAAAA"><Run Text="Dashboard"/><LineBreak/><Run/></TextBlock>
-
-            </Canvas>
 
         </Grid>
 
@@ -61,57 +64,57 @@
 
             <fa:ImageAwesome Icon="FortAwesome" Height="63" VerticalAlignment="Top" Foreground="LightGray" Margin="32,10,30,0" />
 
-            <Button x:Name="btnUsuario" Height="44.668" Foreground="#FFD1D1D1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF222629"  BorderThickness="2" Padding="1" Width="171.957" Canvas.Top="104.587" Canvas.Left="0.023" Cursor="Hand" Background="#FF272B2E" Margin="0,149,0,406">
-                <StackPanel Orientation="Horizontal" Width="150" >
+            <Button x:Name="btnUsuario" Height="44.668" Foreground="#FFD1D1D1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF222629" BorderThickness="2" Padding="1" Width="171.957" Canvas.Top="104.587" Canvas.Left="0.023" Cursor="Hand" Background="#FF272B2E" Margin="0,149,0,406">
+                <StackPanel Orientation="Horizontal" Width="150" Margin="10" >
                     <fa:ImageAwesome Icon="User"  Width="28.167" Height="20" Margin="0,0,10,0" Foreground="LightGray" />
                     <TextBlock VerticalAlignment="Center" Width="58.99" Text="Usuário" />
                 </StackPanel>
 
             </Button>
             <Button x:Name="btnEstoque" Height="44.668" Foreground="#FFD1D1D1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF222629"  BorderThickness="2" Padding="1" Width="171.957" Canvas.Top="104.587" Canvas.Left="0.023" Cursor="Hand" Background="#FF272B2E" Margin="0,193,0,362">
-                <StackPanel Orientation="Horizontal" Width="150">
+                <StackPanel Orientation="Horizontal" Width="150" Margin="10">
                     <fa:ImageAwesome Icon="Inbox"  Width="28.167" Height="20" Margin="0,0,10,0" Foreground="LightGray"/>
                     <TextBlock VerticalAlignment="Center" Width="58.99" Text="Estoque" />
                 </StackPanel>
             </Button>
             <Button x:Name="btnClientes" Height="44.668" Foreground="#FFD1D1D1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF222629"  BorderThickness="2" Padding="1" Width="171.957" Canvas.Top="104.587" Canvas.Left="0.023" Cursor="Hand" Background="#FF272B2E" Margin="0,237,0,318">
-                <StackPanel Orientation="Horizontal" Width="150">
+                <StackPanel Orientation="Horizontal" Width="150" Margin="10">
                     <fa:ImageAwesome Icon="UserCircle"  Width="28.167" Height="20" Margin="0,0,10,0" Foreground="LightGray"/>
                     <TextBlock Text="Clientes" VerticalAlignment="Center" Width="58.99" />
                 </StackPanel>
             </Button>
             <Button x:Name="btnFornecedor" Height="44.668" Foreground="#FFD1D1D1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF222629"  BorderThickness="2" Padding="1" Width="171.957" Canvas.Top="104.587" Canvas.Left="0.023" Cursor="Hand" Background="#FF272B2E" Margin="0,282,0,273">
-                <StackPanel Orientation="Horizontal" Width="150">
+                <StackPanel Orientation="Horizontal" Width="150" Margin="10">
                     <fa:ImageAwesome Icon="UserCircleOutline"  Width="28.167" Height="20" Margin="0,0,10,0" Foreground="LightGray"/>
                     <TextBlock Text="Fornecedores" VerticalAlignment="Center" Width="58.99" />
                 </StackPanel>
             </Button>
             <Button x:Name="btnCaixa" Height="44.668" Foreground="#FFD1D1D1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF222629" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2" Padding="1" Width="171.957" Cursor="Hand" Background="#FF272B2E" Margin="0,327,0,228">
-                <StackPanel Orientation="Horizontal" Width="150">
+                <StackPanel Orientation="Horizontal" Width="150" Margin="10">
                     <fa:ImageAwesome Icon="CartPlus"  Width="28.167" Height="20" Margin="0,0,10,0" Foreground="LightGray"/>
                     <TextBlock Text="Caixa" VerticalAlignment="Center" Width="58.99" />
                 </StackPanel>
             </Button>
             <Button x:Name="btnContasPagar" Height="44.668" Foreground="#FFD1D1D1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF222629" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2" Padding="1" Width="171.957" Cursor="Hand" Background="#FF272B2E" Margin="0,372,0,183">
-                <StackPanel Orientation="Horizontal" Width="150">
+                <StackPanel Orientation="Horizontal" Width="150" Margin="10">
                     <fa:ImageAwesome Icon="Money"  Width="28.167" Height="20" Margin="0,0,10,0" Foreground="LightGray"/>
                     <TextBlock Text="Contas à Pagar" VerticalAlignment="Center" Width="90" />
                 </StackPanel>
             </Button>
             <Button x:Name="btnContasReceber" Height="44.668" Foreground="#FFD1D1D1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF222629" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2" Padding="1" Width="171.957" Cursor="Hand" Background="#FF272B2E" Margin="0,417,0,138">
-                <StackPanel Orientation="Horizontal" Width="150">
+                <StackPanel Orientation="Horizontal" Width="150" Margin="10">
                     <fa:ImageAwesome Icon="Money"  Width="28" Height="20" Margin="0,0,10,0" Foreground="LightGray"/>
                     <TextBlock Text="Contas à Receber" VerticalAlignment="Center" Width="100" />
                 </StackPanel>
             </Button>
             <Button x:Name="btnPregao" Height="44.668" Foreground="#FFD1D1D1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF222629" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2" Padding="1" Width="171.957" Cursor="Hand" Background="#FF272B2E" Margin="0,462,0,93">
-                <StackPanel Orientation="Horizontal" Width="150">
+                <StackPanel Orientation="Horizontal" Width="150" Margin="10">
                     <fa:ImageAwesome Icon="BarChartOutline"  Width="28.167" Height="20" Margin="0,0,10,0" Foreground="LightGray"/>
                     <TextBlock Text="Pregão" VerticalAlignment="Center" Width="58.99" />
                 </StackPanel>
             </Button>
             <Button x:Name="btnConfig" Height="44.668" Foreground="#FFD1D1D1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF222629" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2" Padding="1" Width="171.957" Cursor="Hand" Background="#FF272B2E" Margin="0,507,0,48">
-                <StackPanel Orientation="Horizontal" Width="150">
+                <StackPanel Orientation="Horizontal" Width="150" Margin="10">
                     <fa:ImageAwesome Icon="Gears"  Width="28.167" Height="20" Margin="0,0,10,0" Foreground="LightGray"/>
                     <TextBlock Text="Configurações" VerticalAlignment="Center" Width="85" />
                 </StackPanel>
@@ -122,15 +125,15 @@
                         <ImageBrush ImageSource="/pages/img/user.jpg"/>
                     </Ellipse.Fill>
                 </Ellipse>
-                <TextBlock x:Name="lblNomeUsuario" Text="user.name" Foreground="#FFD1D1D1" Canvas.Left="73" TextWrapping="Wrap" Canvas.Top="70.5" Height="21" Width="64" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" Margin="62,18,0,15"/>
+                <TextBlock x:Name="lblNomeUsuario" Text="user.name" Foreground="#FFD1D1D1" Canvas.Left="73" TextWrapping="Wrap" Canvas.Top="70.5" Height="20" Width="88" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand" Margin="61,9,0,0" FontSize="13"/>
+                <TextBlock x:Name="lblonline" Text="Online" Foreground="#FFD1D1D1" Canvas.Left="73" TextWrapping="Wrap" Canvas.Top="70.5" Height="18" Width="32" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand" Margin="61,28,0,0" FontSize="10"/>
+                <fa:ImageAwesome x:Name="iconOnline" Icon="Circle"  Height="5" Width="5" Foreground="#FF13C513" Cursor="Hand" MouseLeftButtonDown="btnCloseWindow_MouseLeftButtonDown" Margin="92,33,75,16"/>
             </Grid>
         </Grid>
         <!-- GRID MENU LATERAL-->
 
         <Grid Margin="172,0,0,510" Background="White">
-            <Grid.Effect>
-                <DropShadowEffect Color="Gainsboro" BlurRadius="30" RenderingBias="Quality" ShadowDepth="5"/>
-            </Grid.Effect>
+
             <Grid Width="30" Height="50" Background="#FFE5625A" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="20,0">
                 <Grid.Effect>
                     <DropShadowEffect BlurRadius="20" Color="#FFD6D6D6" RenderingBias="Quality" ShadowDepth="1" Opacity="0.995"/>
@@ -147,33 +150,133 @@
             <ScrollViewer Grid.ColumnSpan="1">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="292*"/>
+                        <ColumnDefinition Width="459*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="200*"/>
                         <RowDefinition Height="200*"/>
                         <RowDefinition Height="200*"/>
                     </Grid.RowDefinitions>
-                    <Rectangle Margin="31,20,31,10" Fill="White" RadiusX="10" RadiusY="10" Width="188"/>
-                    <Grid Margin="25">
-                        <Grid Width="30" Height="50" Background="#FFE5625A" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,-5,0,0">
+                    <Rectangle Margin="25,20,25,10" Fill="White" RadiusX="10" RadiusY="10">
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="30" Color="#FFD4D4D4" Direction="0"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25,20,25,10">
+                        <Grid Width="30" Height="50" Background="#FFE5625A" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0">
                             <Grid.Effect>
                                 <DropShadowEffect BlurRadius="20" Color="#FFD6D6D6" RenderingBias="Quality" ShadowDepth="1" Opacity="0.995"/>
                             </Grid.Effect>
-                            <fa:ImageAwesome Icon="Money" Height="20" Margin="4,27,4,3" Foreground="LightGray"/>
+                            <fa:ImageAwesome Icon="Money" Height="20" Margin="4,20,4,3" Foreground="LightGray"/>
                         </Grid>
-                        <TextBlock Text="Ultimas Contas" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="15 4" VerticalAlignment="Top" Foreground="#FFB6B6B6" FontSize="18"/>
+                        
+                        <TextBlock Text="Valores Gerais" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="15 4" VerticalAlignment="Top" Foreground="#FFB6B6B6" FontSize="18"/>
+
+                        <lvc:PieChart x:Name="piechart1" Width="70" Height="70" Margin="0 20 10 0" HorizontalAlignment="Right" VerticalAlignment="Center" Series="{Binding PieChart}">
+                            <lvc:PieChart.SeriesColors>
+                                <lvc:ColorsCollection>
+                                    <Color>#E5625A</Color>
+                                    <Color>#52B4C1</Color>
+                                    <Color>#7FC152</Color>
+                                    <Color>#C1B952</Color>
+                                </lvc:ColorsCollection>
+                            </lvc:PieChart.SeriesColors>
+                        </lvc:PieChart>
                     </Grid>
 
-                    <Rectangle Margin="31,20,30,10" Fill="White" RadiusX="10" RadiusY="10" Grid.Column="1" Grid.ColumnSpan="2"/>
-                    <Rectangle Margin="31,10,30,31" Fill="White" RadiusX="10" RadiusY="10" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="1"/>
-                    <Rectangle Margin="31,10,31,10" Fill="White" RadiusX="10" RadiusY="10" Width="188" Grid.Row="1"/>
-                    <Rectangle Margin="31,10,31,31" Fill="White" RadiusX="10" RadiusY="10" Width="188" Grid.Row="2"/>
+                    <Rectangle Margin="31,20,30,10" Fill="White" RadiusX="10" RadiusY="10" Grid.Column="1">
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="30" Color="#FFD4D4D4" Direction="0"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Grid.Column="1" Margin="31,20,30,10">
+                        <Grid Width="30" Height="50" Background="#FFE5625A" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0">
+                            <Grid.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="#FFD6D6D6" RenderingBias="Quality" ShadowDepth="1" Opacity="0.995"/>
+                            </Grid.Effect>
+                            <fa:ImageAwesome Icon="Database" Height="20" Margin="4,20,4,3" Foreground="LightGray"/>
+                        </Grid>
+                        <TextBlock Text="Estoque Restante" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="15 4" VerticalAlignment="Top" Foreground="#FFB6B6B6" FontSize="18"/>
+                        <lvc:CartesianChart x:Name="CartesianChart" Margin="0 20 10 0" Width="300" Height="80" HorizontalAlignment="Right" VerticalAlignment="Center" Series="{Binding SeriesCollection}">
+                            <lvc:CartesianChart.SeriesColors>
+                                <lvc:ColorsCollection>
+                                    <Color>#E5625A</Color>
+                                    <Color>#061A40</Color>
+                                    <Color>#003559</Color>
+                                    <Color>#0353A4</Color>
+                                </lvc:ColorsCollection>
+                            </lvc:CartesianChart.SeriesColors>
+                        </lvc:CartesianChart>
+                    </Grid>
+                    <Rectangle Margin="31,10,30,27" Fill="White" RadiusX="10" RadiusY="10" Grid.Column="1" Grid.RowSpan="2" Grid.Row="1">
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="30" Color="#FFD4D4D4" Direction="0"/>
+                        </Rectangle.Effect>
+
+                    </Rectangle>
+                    <Grid Grid.Column="1" Margin="31,10,30,27" Grid.RowSpan="2" Grid.Row="1">
+                        <Grid Width="30" Height="50" Background="#FFE5625A" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0">
+                            <Grid.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="#FFD6D6D6" RenderingBias="Quality" ShadowDepth="1" Opacity="0.995"/>
+                            </Grid.Effect>
+                            <fa:ImageAwesome Icon="Wechat" Height="20" Margin="4,20,4,3" Foreground="LightGray"/>
+                        </Grid>
+                        <TextBlock Text="Chat" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="15 4" VerticalAlignment="Top" Foreground="#FFB6B6B6" FontSize="18"/>
+                        <Grid Height="254" VerticalAlignment="Top" Margin="76,30,0,0">
+
+                            <Grid Margin="10,0,24,54" DataContext="{StaticResource categoryViewSource}" >
+
+                                <ListView Name="mensagemItens" ItemsSource="{Binding }"   ScrollViewer.VerticalScrollBarVisibility="Auto" BorderBrush="{x:Null}">
+                                    
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate DataType="Mensagem" >
+                                            <Grid x:Name="gridMensagem" Background="White" Width="250" Margin="0 0 0 0">
+                                                <Grid.Effect>
+                                                    <DropShadowEffect ShadowDepth="1" Color="#FFBBBBBB" />
+                                                </Grid.Effect>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="250" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <TextBlock x:Name="Mensagem" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#FFE5625A" FontFamily="Consolas" FontSize="13" Text="{Binding mensagem}" Margin="10"  Padding="5"/>
+                                                <fa:ImageAwesome x:Name="iconClose" Icon="Close"  Height="8" Width="8" Foreground="#FFB6B6B6" Cursor="Hand" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" MouseLeftButtonDown="iconClose_MouseLeftButtonDown"  />
+                                            </Grid>
+
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+
+
+                                </ListView>
+                            </Grid>
+
+
+
+                            <Rectangle Margin="0,0,27,24" Height="25" Width="288" RadiusX="10" RadiusY="30" Fill="#FFDADADA" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+                            <Rectangle Margin="0,0,24,24" Height="25" Width="25" RadiusX="50" RadiusY="50" Fill="#FF272B2E" Cursor="Hand" VerticalAlignment="Bottom" HorizontalAlignment="Right"></Rectangle>
+                            <fa:ImageAwesome Icon="Send" Width="15" Foreground="#FFE5625A" Margin="0,0,30,29" Cursor="Hand" Height="15" VerticalAlignment="Bottom" HorizontalAlignment="Right" MouseLeftButtonDown="ImageAwesome_MouseLeftButtonDown"/>
+                            <TextBox x:Name="tbMensagem" HorizontalAlignment="Left" Margin="18,207,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Height="20" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="14" FontFamily="Verdana Pro Light" SelectionBrush="#FFE5625A"/>
+                           
+
+                        </Grid>
+                    </Grid>
+                    <Rectangle Margin="25,10,25,20" Fill="White" RadiusX="10" RadiusY="10" Grid.Row="1">
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="30" Color="#FFD4D4D4" Direction="0"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Rectangle Margin="25,3,25,27" Fill="White" RadiusX="10" RadiusY="10" Grid.Row="2">
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="30" Color="#FFD4D4D4" Direction="0"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
                 </Grid>
             </ScrollViewer>
         </Grid>
+
 
     </Grid>
 
