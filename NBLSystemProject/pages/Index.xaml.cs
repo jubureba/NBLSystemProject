@@ -18,6 +18,7 @@ using LiveCharts;
 using LiveCharts.Wpf;
 using NBLSystemProject.pages.db;
 using NBLSystemProject.pages.entity;
+using NBLSystemProject.pages.utils;
 using NBLSystemProject.services;
 
 namespace NBLSystemProject.Pages {
@@ -37,13 +38,13 @@ namespace NBLSystemProject.Pages {
 
         public Index() {
             InitializeComponent();
-          
+
             ganhosPotenciais.Add(new GanhosPotenciais() { id = 1, titulos = "Produto01", valores = new ChartValues<double> { 10, 1 } });
             ganhosPotenciais.Add(new GanhosPotenciais() { id = 2, titulos = "Produto02",  valores = new ChartValues<double> { 50, 20 } });
             ganhosPotenciais.Add(new GanhosPotenciais() { id = 3, titulos = "Produto03", valores = new ChartValues<double> { 80, 8 } });
             ganhosPotenciais.Add(new GanhosPotenciais() { id = 4, titulos = "Produto04", valores = new ChartValues<double> { 60, 16 } });
-            
-            foreach(GanhosPotenciais g in ganhosPotenciais) {
+
+            foreach (GanhosPotenciais g in ganhosPotenciais) {
                 preencherGrafico();
             }
             preencherGrafico2(); 
@@ -111,20 +112,13 @@ namespace NBLSystemProject.Pages {
          */
 
         private void iconClose_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            var selectedItem = mensagemItens.SelectedItem as Mensagem;
-            var selectedId = selectedItem.id;
-            
-            service = serviceimpl;
-            service.Delete(selectedId);
-          
-            getMensagens();
+        {   
+            myPopup.IsOpen = true;
         }
 
         private void ImageAwesome_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
-            if(tbMensagem != null)
+            if (tbMensagem != null)
             {
                 service = serviceimpl;
                 mensagem = new Mensagem();
@@ -135,18 +129,38 @@ namespace NBLSystemProject.Pages {
                 limparCampos();
                 getMensagens();
             }
-
-            
         }
 
+        private void popupClose(object sender, RoutedEventArgs e)
+        {
+            if(myPopup.IsOpen)
+            {
+                myPopup.IsOpen = false;
+            }
+        }
 
+        private void saveMensagem(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = mensagemItens.SelectedItem as Mensagem;
+            var selectedId = selectedItem.id;
 
+            service = serviceimpl;
+            service.Delete(selectedId);
 
+            getMensagens();
 
+            if (myPopup.IsOpen)
+            {
+                myPopup.IsOpen = false;
+            }
+        }
 
-
-
-
-
+        private void mensagemItens_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (myPopup.IsOpen)
+            {
+                myPopup.IsOpen = false;
+            }
+        }
     }
 }

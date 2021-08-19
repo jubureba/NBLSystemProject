@@ -10,11 +10,6 @@
     <None Remove="pages\img\user.jpg" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Page Remove="App1.xaml" />
-    <Page Remove="App2.xaml" />
-    <Page Remove="App323.xaml" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
@@ -25,6 +20,25 @@
 
   <ItemGroup>
     <Resource Include="pages\img\user.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="pages\utils\PopupStyle.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\utils\PlaceholderStyle.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\utils\ListViewStyle.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\utils\RectangleStyle.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
 </Project>
