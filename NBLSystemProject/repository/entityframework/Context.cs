@@ -21,5 +21,6 @@ namespace NBLSystemProject.pages.db
         }
 
         public virtual DbSet<Mensagem> Mensagem { get; set; }
+        public virtual DbSet<Funcionario> Usuario { get; set; }
     }
 }

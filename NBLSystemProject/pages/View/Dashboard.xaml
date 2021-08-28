@@ -1,0 +1,199 @@
+﻿<Page x:Class="NBLSystemProject.pages.Dashboard"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:fa="http://schemas.fontawesome.io/icons/"
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+      xmlns:local="clr-namespace:NBLSystemProject.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="750"
+      Title="Dashboard">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <CollectionViewSource x:Key="categoryViewSource"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/pages/utils/ButtonStyle.xaml"/>
+                <ResourceDictionary Source="/pages/utils/RectangleStyle.xaml"/>
+                <ResourceDictionary Source="/pages/utils/PlaceholderStyle.xaml"/>
+                <ResourceDictionary Source="/pages/utils/PopupStyle.xaml"/>
+                <ResourceDictionary Source="/pages/utils/ListViewStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </Page.Resources>
+
+    <Grid>
+        <Grid x:Name="content" Height="500" Width="750" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Margin="0 0 0 0" >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="67*"/>
+                <RowDefinition Height="433*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.RowSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="292*"/>
+                    <ColumnDefinition Width="459*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200*"/>
+                    <RowDefinition Height="200*"/>
+                    <RowDefinition Height="200*"/>
+                </Grid.RowDefinitions>
+
+                <Rectangle Height="140" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Fill="White" RadiusX="10" RadiusY="10" Style="{StaticResource Estilo_Retangulo}"/>
+                <Grid Height="140" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0">
+                    <Grid Width="30" Height="50" Background="#FFE5625A" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0">
+                        <Grid.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFD6D6D6" RenderingBias="Quality" ShadowDepth="1" Opacity="0.995"/>
+                        </Grid.Effect>
+                        <fa:ImageAwesome Icon="Dollar" Height="20" Width="20" Margin="4,20,4,3" Foreground="LightGray"/>
+                    </Grid>
+
+                    <TextBlock Text="Valores Gerais" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="15 4" VerticalAlignment="Top" Foreground="#FFB6B6B6" FontSize="18"/>
+
+                    <fa:ImageAwesome Icon="Plus" Height="5" Width="5" Margin="50 0 0 64" Foreground="#7FC152" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                    <TextBlock Text="R$" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" Margin="60 0 0 60" VerticalAlignment="Bottom" Foreground="#FFB6B6B6" FontSize="12"/>
+                    <TextBlock Text="9.150,00" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" Margin="73 0 0 58" VerticalAlignment="Bottom" Foreground="#FFB6B6B6" FontSize="18"/>
+
+                    <fa:ImageAwesome Icon="Minus" Height="5" Width="5" Margin="50 0 0 36" Foreground="#FFE5625A" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                    <TextBlock Text="R$" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" Margin="60 0 0 30" VerticalAlignment="Bottom" Foreground="#FFB6B6B6" FontSize="12"/>
+                    <TextBlock Text="3.955,09" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" Margin="73 0 0 28" VerticalAlignment="Bottom" Foreground="#FFB6B6B6" FontSize="18"/>
+
+
+                    <lvc:PieChart x:Name="piechart1" Width="70" Height="70" Margin="0 20 20 0" HorizontalAlignment="Right" VerticalAlignment="Center" Series="{Binding PieChart}">
+                        <lvc:PieChart.SeriesColors>
+                            <lvc:ColorsCollection>
+                                <Color>#E5625A</Color>
+                                <Color>#52B4C1</Color>
+                                <Color>#7FC152</Color>
+                                <Color>#C1B952</Color>
+                            </lvc:ColorsCollection>
+                        </lvc:PieChart.SeriesColors>
+                    </lvc:PieChart>
+                </Grid>
+
+                <Rectangle Height="140" Width="410" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="0" Fill="White" RadiusX="10" RadiusY="10" Grid.Column="1" Style="{StaticResource Estilo_Retangulo}"/>
+                <Grid Height="140" Width="410" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="0 0 0 0">
+                    <Grid Width="30" Height="50" Background="#FFE5625A" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0">
+                        <Grid.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFD6D6D6" RenderingBias="Quality" ShadowDepth="1" Opacity="0.995"/>
+                        </Grid.Effect>
+                        <fa:ImageAwesome Icon="Database" Height="20" Width="20" Margin="4,20,4,3" Foreground="LightGray"/>
+                    </Grid>
+                    <TextBlock Text="Estoque Restante" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="15 4" VerticalAlignment="Top" Foreground="#FFB6B6B6" FontSize="18"/>
+                    <lvc:CartesianChart x:Name="CartesianChart" Margin="0 20 50 0" Width="260" Height="80" HorizontalAlignment="Right" VerticalAlignment="Center" Series="{Binding SeriesCollection}">
+                        <lvc:CartesianChart.SeriesColors>
+                            <lvc:ColorsCollection>
+                                <Color>#E5625A</Color>
+                                <Color>#061A40</Color>
+                                <Color>#003559</Color>
+                                <Color>#0353A4</Color>
+                            </lvc:ColorsCollection>
+                        </lvc:CartesianChart.SeriesColors>
+                    </lvc:CartesianChart>
+                </Grid>
+
+                <Rectangle Margin="0" Height="306" Width="410" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White" RadiusX="10" RadiusY="10" Grid.Column="1" Grid.RowSpan="2" Grid.Row="1" Style="{StaticResource Estilo_Retangulo}"/>
+                <Grid Height="306" Width="410" Margin="0" Grid.RowSpan="2" Grid.Row="1" Grid.Column="1" >
+                    <Grid Width="30" Height="50" Background="#FFE5625A" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0">
+                        <Grid.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFD6D6D6" RenderingBias="Quality" ShadowDepth="1" Opacity="0.995"/>
+                        </Grid.Effect>
+                        <fa:ImageAwesome Icon="Commenting" Height="20" Width="20" Margin="4,20,4,3" Foreground="LightGray"/>
+                    </Grid>
+                    <TextBlock Text="Chat" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="15 4" VerticalAlignment="Top" Foreground="#FFB6B6B6" FontSize="18"/>
+
+                    <Grid Height="237" Width="320" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0">
+                        <Grid Margin="0 0 0 47" Height="210" Width="260" DataContext="{StaticResource categoryViewSource}" >
+                            <ListView Name="mensagemItens"
+                                      Background="Transparent"
+                                      Width="260" ItemsSource="{Binding }" 
+                                      ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                                      BorderBrush="{x:Null}" 
+                                      SelectionChanged="mensagemItens_SelectionChanged"
+                                      ItemContainerStyle="{StaticResource ListViewItemStyle2}">
+
+                                <ListView.ItemTemplate >
+                                    <DataTemplate DataType="Mensagem" >
+                                        <Border BorderBrush="Transparent" Background="Transparent" Width="226" BorderThickness="1 0 0 2" Opacity="1">
+                                            <Grid x:Name="gridMensagem" Background="Transparent" Width="226" Margin="0 0 0 0">
+                                                <!--<Grid.Effect>
+                                                    <DropShadowEffect ShadowDepth="1" Color="#FFBBBBBB" />
+                                                </Grid.Effect>-->
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="226" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <TextBlock x:Name="autorMensagem" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="Wrap" Background="Transparent" FontFamily="Tahoma" FontSize="9" Foreground="#c3c3c3" Text="Usuário Mock" Margin="2 5 0 0"  />
+                                                <TextBlock x:Name="dataMensagem" VerticalAlignment="Top" HorizontalAlignment="Right" TextWrapping="Wrap" Background="Transparent" FontFamily="Tahoma" FontSize="9" Foreground="#c3c3c3" Text="19/08/2021" Margin="0 5 25 0"  />
+                                                <TextBlock x:Name="Mensagem" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="Wrap" Background="Transparent" FontFamily="Consolas" FontSize="13" Foreground="Black" Opacity=".6" Text="{Binding mensagem}" Margin="10 20 25 10"  Padding="5"/>
+                                                <fa:ImageAwesome x:Name="iconClose" Icon="Close"  Height="8" Width="8" Foreground="#FFB6B6B6" Cursor="Hand" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 5 5 0" MouseLeftButtonDown="iconClose_MouseLeftButtonDown"  />
+                                                <TextBlock x:Name="separador" VerticalAlignment="Bottom" HorizontalAlignment="Center" TextWrapping="Wrap" Background="Transparent" FontFamily="Tahoma" FontSize="10" Foreground="#c3c3c3" Text="__________________________________" Margin="0"  />
+
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+
+                        <Rectangle Margin="0,0,27,04" Height="25" Width="274" RadiusX="10" RadiusY="30" Fill="#FFDADADA" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+                        <Rectangle Margin="0,0,26,04" Height="25" Width="34" RadiusX="10" RadiusY="30" Fill="#FFCDCDCD" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+                        <!-- <Rectangle Margin="0,0,24,24" Height="25" Width="25" RadiusX="50" RadiusY="50" Fill="#FF272B2E" Cursor="Hand" VerticalAlignment="Bottom" HorizontalAlignment="Right"></Rectangle> -->
+                        <fa:ImageAwesome Icon="Send" Width="15" Foreground="#FFE5625A" Margin="0,0,36,09" Cursor="Hand" Height="15" VerticalAlignment="Bottom" HorizontalAlignment="Right" MouseLeftButtonDown="ImageAwesome_MouseLeftButtonDown"/>
+                        <TextBox x:Name="tbMensagem" Style="{StaticResource Estilo_Placeholder}" Tag="Digite..."  HorizontalAlignment="Left" Margin="30,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="20" BorderBrush="{x:Null}" FontSize="14" FontFamily="Verdana Pro Light" Background="{x:Null}" SelectionBrush="{x:Null}"/>
+
+                    </Grid>
+                </Grid>
+                <Rectangle Height="140" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Fill="White" RadiusX="10" RadiusY="10" Grid.Row="1" Style="{StaticResource Estilo_Retangulo}"/>
+                <Grid Height="140" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Grid.Row="1" >
+
+
+                </Grid>
+
+
+
+
+                <Rectangle Height="140" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Fill="White" RadiusX="10" RadiusY="10" Grid.Row="2" Style="{StaticResource Estilo_Retangulo}"/>
+                <!--
+                <Border Width="130" Height="80" Grid.Row="2" Margin="71,62,71,25" BorderThickness="1" BorderBrush="#FF999999" >
+                
+                    <Grid Width="130" Height="80" Grid.Row="2" Margin="0">  
+                    <Grid Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFEAEAEA">
+                        <TextBlock Text="Titulo" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                    </Grid>
+                        <TextBlock Text="Confirmação? " VerticalAlignment="Center" Margin="5 0 0 0"/>
+                        <Button Width="50" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5 0 0 5 " Content="Sim" Background="#FFE68A8A"> </Button>
+                        <Button Width="35" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="60 0 0 5 " Content="Não" Background="#FFD1D1D1"> </Button>
+                </Grid>
+                </Border>
+
+
+-->
+                <Popup Name="myPopup" IsOpen="{Binding IsChecked, ElementName=iconClose}" HorizontalOffset="160" VerticalOffset="-50"  PopupAnimation="Slide" Placement="Mouse" >
+                    <Border BorderBrush="#c3c3c3" Width="150" BorderThickness="2" Height="80" Margin="0">
+                        <Grid Width="150" Height="80" Margin="0 0 0 0" Background="#fff" Opacity="1">
+                            <Grid Width="150" Height="20" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFD1D1D1">
+                                <TextBlock Text="Confirmação" FontFamily="consolas" FontSize="11" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                            </Grid>
+                            <TextBlock Text="Tem certeza que deseja remover?" FontFamily="consolas" VerticalAlignment="Center" Margin="5 0 0 7" TextWrapping="Wrap"/>
+                            <Button Width="60" Height="20" FontFamily="consolas" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5 0 0 7" Content="Sim" Background="#FFE68A8A" Click="saveMensagem"/>
+                            <Button Width="45" Height="20" FontFamily="consolas" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="70 0 0 7" Content="Não" Background="#FFD1D1D1" Click="popupClose"/>
+                        </Grid>
+                    </Border>
+
+
+                </Popup>
+
+
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>
